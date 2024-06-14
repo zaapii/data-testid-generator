@@ -2,7 +2,7 @@
   "name": "click-testid-generator",
   "displayName": "click-testid-generator",
   "description": "data-testid automatic generator for Vue components",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.90.0"
   },
