@@ -1,3 +1,5 @@
+import * as vscode from 'vscode';
+
 export function addTestIdToVueComponent(componentCode: string, selectedText: string): string {
     const componentNameMatch = componentCode.match(/name:\s*['"](\w+)['"]/);
     if (componentNameMatch) {
@@ -9,6 +11,8 @@ export function addTestIdToVueComponent(componentCode: string, selectedText: str
 
         // Reemplazar el texto seleccionado con el data-testid
         return componentCode.replace(selectedTextRegex, `data-testid="${dataTestId}"`);
+    } else {
+        vscode.window.showErrorMessage('El componente no tiene un atributo "name", por favor agregarlo.');
     }
     return componentCode;
 }
