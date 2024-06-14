@@ -2,21 +2,37 @@
   "name": "click-testid-generator",
   "displayName": "click-testid-generator",
   "description": "data-testid automatic generator for Vue components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.90.0"
   },
   "categories": [
     "Other"
   ],
-"main": "./out/extension.js",
+  "main": "./out/extension.js",
   "contributes": {
-      "commands": [
-          {
-              "command": "extension.addTestId",
-              "title": "Add data-testid"
-          }
+    "commands": [
+      {
+        "command": "extension.addTestId",
+        "title": "Add data-testid"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.addTestId",
+        "key": "ctrl+shift+z",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.addTestId",
+          "when": "editorTextFocus && !editorReadonly",
+          "group": "navigation"
+        }
       ]
+    }
   },
   "activationEvents": [
     "onCommand:extension.addTestId"
