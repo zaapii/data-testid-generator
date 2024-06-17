@@ -17,7 +17,7 @@ export function addTestIdToVueComponent(componentCode: string, selectedText: str
             let type = componentTagMatch[1]; // Extraer el tipo de la etiqueta del componente
 
             if (type.includes('-')) {
-                type = type.split('-')[0];
+                type = type.split('-')[0].toLowerCase();
             }
 
             const dataTestId = `${componentName}__${selectedText}--${type}`;
